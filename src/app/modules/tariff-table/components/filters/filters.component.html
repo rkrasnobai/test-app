@@ -1,0 +1,34 @@
+<form class="filters-block"
+      [formGroup]="filters">
+  <div class="selecting">
+    <label>
+      Filter by tariff name
+      <select formControlName="tariffName">
+        <option *ngFor="let tariff of tariffNameSelect; trackBy: trackByFn"
+                [value]="tariff">
+          {{tariff}}
+        </option>
+      </select>
+    </label>
+    <button *ngIf="getControl('tariffName')?.value"
+            (click)="resetControl('tariffName')">
+      ✕
+    </button>
+  </div>
+
+  <div class="selecting">
+    <label>
+      Filter by price
+      <input class="from-input input" appOnlyNumbers type="text" placeholder="from" formControlName="priceValueFrom">
+      <input class="input" type="text" appOnlyNumbers placeholder="to" formControlName="priceValueTo">
+    </label>
+  </div>
+
+  <div class="selecting">
+    <label>
+      Filter by download speed
+      <input class="from-input input" appOnlyNumbers type="text" placeholder="from" formControlName="downloadSpeedFrom">
+      <input class="input" type="text" appOnlyNumbers placeholder="to" formControlName="downloadSpeedTo">
+    </label>
+  </div>
+</form>

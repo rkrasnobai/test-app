@@ -1,0 +1,40 @@
+<div class="main-block">
+  <div class="index-row">
+    <span>{{index + 1}}.</span>
+  </div>
+
+  <div class="content">
+    <div class="tariff-name">{{item.provider.content.text}}</div>
+    <div class="wrapper-speed">
+      <div>
+        <span class="download-title">Download</span>
+        <div class="speed-block">
+          <span class="arrow-block">&darr;</span>
+          {{item.contractTerm.downloadSpeed.content.text}}
+        </div>
+      </div>
+      <div class="upload-block">
+        <span class="upload-title">Upload</span>
+        <div class="speed-block">
+          <span class="arrow-block">&uarr;</span>
+          {{item.contractTerm.uploadSpeed.content.text}}
+        </div>
+      </div>
+    </div>
+
+    <div class="benefit-block">
+      <ul *ngFor="let benefit of item.remarks | tariffBenefitCutting">
+        <li>{{benefit.type}}</li>
+      </ul>
+      <div class="cutting" *ngIf="item.remarks.length > 3">...</div>
+    </div>
+
+    <div class="button-block">
+      <div class="price">
+        {{item.cost.effectiveCost.content.text}}
+      </div>
+      <button class="tariff-btn">To tariff ></button>
+      <button class="tariff-btn-mobile"> > </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<app-list-item *ngFor="let item of (data | async)?.offers
+          | sortByPrice: filtersValue?.priceValueFrom : filtersValue?.priceValueTo
+          | sortByDownloadSpeed: filtersValue?.downloadSpeedFrom : filtersValue?.downloadSpeedTo
+          | sortByTariffName: filtersValue?.tariffName
+          let i = index
+          trackBy: trackByFn"
+          [item]="item"
+          [index]="i">
+</app-list-item>

@@ -1,0 +1,203 @@
+$desktop: 1040px;
+$tablet: 500px;
+
+.main-block {
+  display: flex;
+  border: 2px solid black;
+  margin-bottom: 10px;
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+
+    .tariff-name {
+      flex: 1;
+    }
+  }
+
+  .wrapper-speed {
+    padding: 0 5px 0 0;
+    flex: 1;
+
+    .speed-block {
+      width: 100px;
+    }
+
+    .upload-block {
+      display: none;
+    }
+  }
+
+  .benefit-block {
+    display: none;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: end;
+    padding-right: 5px;
+  }
+
+  .button-block {
+    display: flex;
+    align-items: flex-start;
+
+    button {
+      border: 2px solid black;
+      background: #fff;
+    }
+
+    .tariff-btn {
+      display: none;
+    }
+
+    .tariff-btn-mobile {
+      display: block;
+      width: 20px;
+      height: 60px;
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .main-block {
+    .content {
+      .tariff-name {
+        padding-top: 10px;
+      }
+    }
+
+    .wrapper-speed {
+      .speed-block {
+        border: 1px solid black;
+        border-radius: 0 35px 35px 0;
+        width: 130px;
+
+        .arrow-block {
+          border-right: 1px solid black;
+          padding: 0 3px;
+        }
+      }
+
+      .download-title {
+        display: none;
+      }
+
+      .upload-title {
+        display: none;
+      }
+
+      .upload-block {
+        display: block;
+      }
+    }
+
+    .button-block {
+      display: block;
+
+      .tariff-btn {
+        display: block;
+        width: 130px;
+      }
+      .tariff-btn-mobile {
+        display: none;
+      }
+    }
+
+    .price {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .main-block {
+    display: flex;
+    border: 2px solid black;
+    margin-bottom: 10px;
+
+    .index-row {
+      display: flex;
+      align-items: center;
+      border-right: 2px solid black;
+      width: 20px;
+      padding-left: 5px;
+    }
+
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 5px;
+
+      .tariff-name {
+        flex: 1;
+        padding-top: 10px;
+      }
+    }
+
+    .benefit-block {
+      display: block;
+      width: 25%;
+
+      .cutting {
+        margin-left: 23px;
+      }
+    }
+
+    .wrapper-speed {
+      padding: 0 10px;
+      flex: 1;
+
+      .download-title {
+        display: block;
+      }
+
+      .speed-block {
+        border: 1px solid black;
+        border-radius: 0 35px 35px 0;
+        padding-right: 15px;
+        width: 130px;
+
+        .arrow-block {
+          border-right: 1px solid black;
+          padding: 0 5px;
+        }
+      }
+
+      .upload-block {
+        display: block;
+      }
+
+      .upload-title {
+        display: block;
+      }
+    }
+
+    .button-block {
+      display: block;
+      padding-right: 10px;
+
+      .tariff-btn {
+        display: block;
+        width: 130px;
+      }
+
+      .tariff-btn-mobile {
+        display: none;
+      }
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 20px;
+      text-align: end;
+      padding-right: 5px;
+      margin-bottom: 15px;
+    }
+  }
+}
